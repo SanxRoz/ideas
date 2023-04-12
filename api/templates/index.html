@@ -21,6 +21,7 @@
       .answer-header{
          font-weight: 500 !important;
          text-align: center !important;
+         width: 100%;
       }
 
       .text-answer{
@@ -153,12 +154,12 @@
          <div class="div-input">
             <h1 class="heading">Jst Ideas</h1>
             <div class="div-answer">
-               <div class="text-answer answer-header">Welcome to S3 dear pupil</div>
+               <div class="text-answer answer-header">Welcome to N&W S3 dear folks<br> Check if your idea worth it, add your OpenAI key above and tell us what your idea is right here 👇!</div>
             </div>
             <div class="form-block w-form">
                <form id="email-form" name="email-form" data-name="Email Form" action="/" method="post" class="div-form">
-                  <input type="text" class="text-field w-input" maxlength="256" name="input" data-name="input" placeholder="Roast me" id="input"/>
-                  <input type="submit" id="updateBtn" value="Prompt" data-wait="Please wait..." class="button-submit w-button"/>
+                  <input type="text" class="text-field w-input" maxlength="256" name="input" data-name="input" placeholder="My idea worth it?" id="input"/>
+                  <input type="submit" id="updateBtn" value="Check this out" data-wait="Please wait..." class="button-submit w-button"/>
                   <div class="loader">
                      <img style='height:100%;' src="https://uploads-ssl.webflow.com/6414ec5868f1abfe4d565feb/6435d6eb7fe5866695170339_loading.svg">
                   </div>
@@ -166,7 +167,7 @@
                
             </div>
             <div class="div-answer">
-               <div id="output" class="text-answer box-background"></div>
+               <div id="output" style="display: none;"" class="text-answer box-background"></div>
             </div>
          </div>
          <div class="div-inspired">
@@ -254,7 +255,9 @@
          
          updateBtn.addEventListener('click', () => {
             loader.classList.add('show');
-               updateBtn.classList.add('hide'); // show the loader by adding the .show class
+               updateBtn.classList.add('hide');
+               var displayoutput = document.getElementById("output");
+               displayoutput.style.display = "block"; // show the loader by adding the .show class
             // You can do any other processing here, like fetching new data using AJAX
          
          });
